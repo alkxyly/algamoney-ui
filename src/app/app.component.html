@@ -24,7 +24,7 @@
 
     <div class="p-grid" style="margin-top: 10px;">
       <div class="p-col-12" >
-        <p-table [value]="lancamentos">
+        <p-table [value]="lancamentos" [paginator]="true" [rows]="2">
           <ng-template pTemplate="header">
             <tr>
               <th>Pessoa</th>
@@ -33,7 +33,7 @@
               <th class="col-data-header">Pagamento</th>
               <th class="col-valor-header">Valor</th>
               <th class="col-valor-header"> <button pButton label="Teste"></button></th>  
-              <th class="col-acoes-header"></th>
+              <th class="col-acoes-header"></th> 
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-lancamento>
