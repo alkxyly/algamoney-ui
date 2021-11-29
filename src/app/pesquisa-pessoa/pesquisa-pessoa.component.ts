@@ -9,10 +9,10 @@ export class PesquisaPessoaComponent  {
 
   pessoas = [
     {nome: 'Maria Eduarda', cidade: 'Aracaju', estado: 'SE', status: true},
-    {nome: 'Maria Eduarda', cidade: 'Santa do São Francisco', estado: 'SE', status: false},
-    {nome: 'Maria Eduarda', cidade: 'Ilha das Flores', estado: 'SE', status: false},
-    {nome: 'Maria Eduarda', cidade: 'Penedo', estado: 'AL', status: true},
-    {nome: 'Maria Eduarda', cidade: 'Japoatã', estado: 'SE', status: false}
+    {nome: 'Carlos', cidade: 'Santa do São Francisco', estado: 'SE', status: false},
+    {nome: 'Alex', cidade: 'Ilha das Flores', estado: 'SE', status: false},
+    {nome: 'Alberto', cidade: 'Penedo', estado: 'AL', status: true},
+    {nome: 'José da Silva Santos', cidade: 'Japoatã', estado: 'SE', status: false}
   ];
 
 }
