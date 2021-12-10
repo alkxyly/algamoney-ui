@@ -78,15 +78,16 @@ label {
   
   }
 
-a {
-  text-decoration: none;
-}
-  
-a:hover, a:focus {
-  text-decoration: underline;
-}
-  
-a.p-button:hover,
-a.p-button:focus {
-  text-decoration: none;
-}
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+    
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+    
+  a.p-button:hover,
+  a.p-button:focus {
+    text-decoration: none;
+  }
