@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { AppComponent } from './app.component';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 
 
@@ -37,7 +38,8 @@ import { AppComponent } from './app.component';
     InputTextareaModule,
     TableModule,
     TabViewModule,
-    TooltipModule
+    TooltipModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
