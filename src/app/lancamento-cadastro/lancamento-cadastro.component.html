@@ -1,7 +1,9 @@
+
 <div class="container">
+
     <form> 
-  
-      <div class="p-grid">
+        
+        <div class="p-grid">
         <div class="p-col-12">
           <h1>Novo Lançamento</h1>
         </div>
@@ -28,11 +30,11 @@
         </div>
         <div class="p-col-12 p-md-6 p-fluid">
           <label>Categoria</label>
-          <input pInputText type="text">
+          <p-dropdown [options]="categorias"  optionLabel="label" placeholder="Selecione"></p-dropdown>
         </div>
         <div class="p-col-12 p-md-6 p-fluid">
           <label>Pessoa</label>
-          <input pInputText type="text">
+          <p-dropdown [options]="pessoas" [filter]="true" optionLabel="label" placeholder="Selecione"></p-dropdown>
         </div>
         
         <div class="p-col-12 p-fluid">

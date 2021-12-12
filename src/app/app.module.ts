@@ -17,6 +17,7 @@ import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.compo
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { AppComponent } from './app.component';
 import {SelectButtonModule} from 'primeng/selectbutton';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
@@ -39,7 +40,8 @@ import {SelectButtonModule} from 'primeng/selectbutton';
     TableModule,
     TabViewModule,
     TooltipModule,
-    SelectButtonModule
+    SelectButtonModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
