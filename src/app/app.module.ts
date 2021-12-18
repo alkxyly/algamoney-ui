@@ -22,6 +22,7 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 import { NavbarComponent } from './navbar/navbar.component';
 import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -32,7 +33,8 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     NavbarComponent,
     PesquisaPessoaComponent,
     LancamentoCadastroComponent,
-    PessoaCadastroComponent
+    PessoaCadastroComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
