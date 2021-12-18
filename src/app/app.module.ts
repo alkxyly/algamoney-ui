@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 
 
 
@@ -28,7 +29,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     LancamentosPesquisaComponent,
     NavbarComponent,
     PesquisaPessoaComponent,
-    LancamentoCadastroComponent
+    LancamentoCadastroComponent,
+    PessoaCadastroComponent
   ],
   imports: [
     BrowserModule,
