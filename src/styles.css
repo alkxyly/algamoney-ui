@@ -91,3 +91,7 @@ label {
   a.p-button:focus {
     text-decoration: none;
   }
+
+  form .p-button {
+    margin-right: .25em;
+  }

@@ -23,6 +23,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { MessageComponent } from './message/message.component';
+import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
+import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
 
 
 
@@ -34,7 +36,9 @@ import { MessageComponent } from './message/message.component';
     PesquisaPessoaComponent,
     LancamentoCadastroComponent,
     PessoaCadastroComponent,
-    MessageComponent
+    MessageComponent,
+    LancamentosGridComponent,
+    PessoasGridComponent
   ],
   imports: [
     BrowserModule,
