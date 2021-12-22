@@ -27,19 +27,17 @@ import { MessageModule } from 'primeng/message';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-
-    ButtonModule,
-    CalendarModule,
-    InputTextModule,
-    InputTextareaModule,
+    FormsModule,   
+   
     TableModule,
-    TabViewModule,
-    TooltipModule,
-    SelectButtonModule,
-    DropdownModule,
     InputNumberModule,
-    MessageModule
+    InputTextModule,
+    ButtonModule,    
+    TooltipModule,
+    InputTextareaModule,
+    CalendarModule,
+    SelectButtonModule,
+    DropdownModule    
   ],
   exports:[
     LancamentosPesquisaComponent,

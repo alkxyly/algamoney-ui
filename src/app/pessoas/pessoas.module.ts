@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 import { ButtonModule } from 'primeng/button';
@@ -14,33 +14,31 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputMaskModule } from 'primeng/inputmask';
-import { MessageModule } from "primeng/message";
+import { MessageModule } from 'primeng/message';
 
-import { AppComponent } from './app.component';
-
-import { NavbarComponent } from './navbar/navbar.component';
-import { MessageComponent } from './message/message.component';
-
-import { LancamentosModule } from "./lancamentos/lancamentos.module";
-import { PessoasModule } from './pessoas/pessoas.module';
-
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
+import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
+import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    MessageComponent 
+    PessoaCadastroComponent,
+    PessoasGridComponent,
+    PesquisaPessoaComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
 
-    LancamentosModule,
-    PessoasModule
+    InputTextModule,
+    ButtonModule,    
+    TooltipModule,
+    InputMaskModule,    
+    TableModule    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports:[
+    PessoaCadastroComponent,
+    PesquisaPessoaComponent
+  ]
 })
-
-
-export class AppModule { }
+export class PessoasModule { }
