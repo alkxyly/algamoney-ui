@@ -18,32 +18,28 @@ import { MessageModule } from "primeng/message";
 
 import { AppComponent } from './app.component';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
-import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
-import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { MessageComponent } from './message/message.component';
-import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
-
+import { LancamentosModule } from "./lancamentos/lancamentos.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LancamentosPesquisaComponent,
     NavbarComponent,
-    PesquisaPessoaComponent,
-    LancamentoCadastroComponent,
+    PesquisaPessoaComponent,  
     PessoaCadastroComponent,
-    MessageComponent,
-    LancamentosGridComponent,
+    MessageComponent,  
     PessoasGridComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+
+    LancamentosModule,
     
     ButtonModule,
     CalendarModule,

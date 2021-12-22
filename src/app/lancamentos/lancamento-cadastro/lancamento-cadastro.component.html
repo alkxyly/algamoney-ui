@@ -16,7 +16,7 @@
         <div class="p-col-6 p-md-3 p-fluid">
           <label>Vencimento</label>
           <p-calendar dateFormat="dd/mm/yy" showIcon="true" name="vencimento" ngModel #vencimento="ngModel" [required]="true"></p-calendar>
-          <app-message [control]="vencimento" error="required" text="Informe a data de vencimento"></app-message>
+          <!-- <app-message [control]="vencimento" error="required" text="Informe a data de vencimento"></app-message> -->
         </div>
 
         <div class="p-col-6 p-fluid">
@@ -29,17 +29,17 @@
           <input pInputText type="text" name="descricao" 
             ngModel #descricao="ngModel" required minlength="5">
          
-            <app-message [control]="descricao.control" error="required"
-            text="Informe a cidade"></app-message>
+            <!-- <app-message [control]="descricao.control" error="required" -->
+            <!-- text="Informe a cidade"></app-message> -->
 
-            <app-message [control]="descricao" error="minlength"
-            text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres. Você digitou apenas {{ descricao.errors?.minlength?.actualLength }}"></app-message>
+            <!-- <app-message [control]="descricao" error="minlength" -->
+            <!-- text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres. Você digitou apenas {{ descricao.errors?.minlength?.actualLength }}"></app-message> -->
         </div>
 
         <div class="p-col-12 p-md-3 p-fluid">
           <label>Valor</label>
           <p-inputNumber  mode="currency" currency="BRL" placeholder="0,00" name="valor" ngModel #valor="ngModel" [required]="true"></p-inputNumber>
-          <app-message [control]="valor" error="required" text="Informe o valor"></app-message>
+          <!-- <app-message [control]="valor" error="required" text="Informe o valor"></app-message> -->
         </div>
 
         <div class="p-col-12 p-md-6 p-fluid">
