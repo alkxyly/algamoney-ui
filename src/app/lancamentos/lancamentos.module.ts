@@ -18,10 +18,6 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 
-
-
-
-
 @NgModule({
   declarations: [ 
     LancamentosPesquisaComponent,
