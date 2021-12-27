@@ -1,27 +1,29 @@
 <div class="container">
     <div class="p-grid">
   
-      <div class="p-col-12">
-        <h1>Lançamentos</h1>
-      </div>
-  
-      <div class="p-col-12 p-fluid">
-        <label>Descrição</label>
-        <input pInputText type="text">
-      </div>
-  
-      <div class="p-col-12" style="margin-top: 10px;">
-        <label style="display: block">Vencimento</label>
-        <input pInputText type="text" style="width: 95px">
-  
-        <label class="label" style="padding: 10px;">até</label>
-        <input pInputText type="text" style="width: 95px">
-      </div>
-  
-      <div class="p-col-12" style="margin-top: 10px;">
-        <button pButton type="submit" label="Pesquisar"></button>
-      </div>
-  
+      <form autocomplete="off" (ngSubmit)="pesquisar()">
+        <div class="p-col-12">
+          <h1>Lançamentos</h1>
+        </div>
+    
+        <div class="p-col-12 p-fluid">
+          <label>Descrição</label>
+          <input pInputText type="text" name="descricao" [(ngModel)]="descricao">
+        </div>
+    
+        <div class="p-col-12" style="margin-top: 10px;">
+          <label style="display: block">Vencimento</label>
+          <input pInputText type="text" style="width: 95px">
+    
+          <label class="label" style="padding: 10px;">até</label>
+          <input pInputText type="text" style="width: 95px">
+        </div>
+    
+        <div class="p-col-12" style="margin-top: 10px;">
+          <button pButton type="submit" label="Pesquisar"></button>
+        </div>
+    </form>
+
       <div class="p-grid" style="margin-top: 10px;">
         <div class="p-col-12" >
           <app-lancamentos-grid [lancamentos]="lancamentos"></app-lancamentos-grid>
