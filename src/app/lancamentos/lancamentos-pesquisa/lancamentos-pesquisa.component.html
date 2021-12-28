@@ -14,10 +14,10 @@
     
         <div class="p-col-12" style="margin-top: 10px;">
           <label style="display: block">Vencimento</label>
-          <input pInputText type="text" style="width: 95px">
+          <p-calendar name="dataVencimentoInicio" [(ngModel)]="dataVencimentoInicio" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
     
           <label class="label" style="padding: 10px;">até</label>
-          <input pInputText type="text" style="width: 95px">
+          <p-calendar name="dataVencimentoFim" [(ngModel)]="dataVencimentoFim" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
         </div>
     
         <div class="p-col-12" style="margin-top: 10px;">
