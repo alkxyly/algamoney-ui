@@ -9,15 +9,15 @@
     
         <div class="p-col-12 p-fluid">
           <label>Descrição</label>
-          <input pInputText type="text" name="descricao" [(ngModel)]="descricao">
+          <input pInputText type="text" name="descricao" [(ngModel)]="filtro.descricao">
         </div>
     
         <div class="p-col-12" style="margin-top: 10px;">
           <label style="display: block">Vencimento</label>
-          <p-calendar name="dataVencimentoInicio" [(ngModel)]="dataVencimentoInicio" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+          <p-calendar name="dataVencimentoInicio" [(ngModel)]="filtro.dataVencimentoInicio" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
     
           <label class="label" style="padding: 10px;">até</label>
-          <p-calendar name="dataVencimentoFim" [(ngModel)]="dataVencimentoFim" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+          <p-calendar name="dataVencimentoFim" [(ngModel)]="filtro.dataVencimentoFim" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
         </div>
     
         <div class="p-col-12" style="margin-top: 10px;">
