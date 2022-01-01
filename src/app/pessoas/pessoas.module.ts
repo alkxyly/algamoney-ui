@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
 import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -25,7 +26,7 @@ import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.compo
   imports: [
     CommonModule,
     FormsModule,
-
+    HttpClientModule,
     SharedModule,
 
     InputTextModule,
