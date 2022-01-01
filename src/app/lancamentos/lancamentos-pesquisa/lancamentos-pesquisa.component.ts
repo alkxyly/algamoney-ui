@@ -8,21 +8,27 @@ import { LancamentoFiltro, LancamentoService } from '../lancamento.service';
 })
 export class LancamentosPesquisaComponent implements OnInit{
   
-
+  totalRegistros: number = 0;
   filtro = new LancamentoFiltro();
   lancamentos = [];
 
   constructor(private lancamentoService: LancamentoService){}
 
   ngOnInit(): void {
-    this.pesquisar();
+    //this.pesquisar();
   }
 
-  pesquisar(){
-
+  pesquisar(pagina:number = 0){
+    this.filtro.pagina = pagina;
     this.lancamentoService.pesquisar(this.filtro).then(resultado => {
+      this.totalRegistros = resultado.total;
       this.lancamentos = resultado.lancamentos;
     });
+  }
+
+  aoMudarPagina(event: any){
+    const pagina = event.first / event.rows;
+    this.pesquisar(pagina);
   }
   
 }
