@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Table } from 'primeng/table';
 import { LancamentoFiltro, LancamentoService } from '../lancamento.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LancamentosPesquisaComponent implements OnInit{
   totalRegistros: number = 0;
   filtro = new LancamentoFiltro();
   lancamentos = [];
-
+  @ViewChild('tabela') grid!: Table;
   constructor(private lancamentoService: LancamentoService){}
 
   ngOnInit(): void {
@@ -29,6 +30,12 @@ export class LancamentosPesquisaComponent implements OnInit{
   aoMudarPagina(event: any){
     const pagina = event.first / event.rows;
     this.pesquisar(pagina);
+  }
+
+  excluir(lancamento: any){
+    this.lancamentoService.excluir(lancamento.codigo).then(() => {
+      this.grid.reset();
+    });
   }
   
 }
