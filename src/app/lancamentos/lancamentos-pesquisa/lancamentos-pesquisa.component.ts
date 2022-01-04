@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Table } from 'primeng/table';
+import { MessageService } from 'primeng/api';
 import { LancamentoFiltro, LancamentoService } from '../lancamento.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class LancamentosPesquisaComponent implements OnInit{
   filtro = new LancamentoFiltro();
   lancamentos = [];
   @ViewChild('tabela') grid!: Table;
-  constructor(private lancamentoService: LancamentoService){}
+
+  constructor(
+    private lancamentoService: LancamentoService,
+    private messageService: MessageService
+    ){}
 
   ngOnInit(): void {
     //this.pesquisar();
@@ -35,7 +40,9 @@ export class LancamentosPesquisaComponent implements OnInit{
   excluir(lancamento: any){
     this.lancamentoService.excluir(lancamento.codigo).then(() => {
       this.grid.reset();
+      this.messageService.add({severity:'success', summary:'Exclusão do Lançamento', detail:'Lançamento excluído com sucesso!'});
     });
+    
   }
   
 }
