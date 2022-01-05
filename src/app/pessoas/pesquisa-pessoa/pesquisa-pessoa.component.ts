@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { Table } from 'primeng/table';
 import { PessoaFiltro, PessoaService } from '../pessoa.service';
 
 @Component({
@@ -8,11 +10,15 @@ import { PessoaFiltro, PessoaService } from '../pessoa.service';
 })
 export class PesquisaPessoaComponent implements OnInit {
   
-  totalRegistros: number;
+  totalRegistros: number = 0;
   pessoas = [];
   filtro = new PessoaFiltro();
+  @ViewChild('tabela') grid!: Table;
 
-  constructor(private pessoaService: PessoaService){}
+  constructor(
+    private pessoaService: PessoaService,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService){}
 
   ngOnInit(): void {
     //this.pesquisar();
@@ -30,6 +36,23 @@ export class PesquisaPessoaComponent implements OnInit {
   aoMudarPagina(event: any){
     const pagina = event.first / event.rows;
     this.pesquisar(pagina); 
+  }
+
+
+  confirmarExclusao(pessoa: any){
+    this.confirmationService.confirm({
+      message: 'Tem certeza que deseja excluir?',
+      accept: () => { this.excluir(pessoa); }
+    });
+  }
+
+
+  excluir(pessoa: any){
+    this.pessoaService.excluir(pessoa.codigo)
+      .then(() => {
+       this.grid.reset();
+       this.messageService.add({severity:'success', summary:'Exclusão da Pessoa', detail:'Pessoa excluída com sucesso!'});
+      });
   }
 
 }

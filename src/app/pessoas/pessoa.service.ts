@@ -47,4 +47,10 @@ export class PessoaService {
           return resultado;
         });
   }
+
+  excluir(codigo: number): Promise<void>{
+    return this.http.delete(`${this.url}/${codigo}`, { headers: this.headers })
+      .toPromise()
+      .then(() => null);
+  } 
 }
