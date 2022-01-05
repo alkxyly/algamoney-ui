@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ErrorHandler, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { PessoaFiltro, PessoaService } from '../pessoa.service';
@@ -18,7 +18,8 @@ export class PesquisaPessoaComponent implements OnInit {
   constructor(
     private pessoaService: PessoaService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService){}
+    private messageService: MessageService,
+    private errorHandler: ErrorHandler){}
 
   ngOnInit(): void {
     //this.pesquisar();
@@ -30,7 +31,8 @@ export class PesquisaPessoaComponent implements OnInit {
       .then(resultado => {
         this.totalRegistros = resultado.total;
         this.pessoas = resultado.pessoas;
-      });
+      })
+      .catch((error) => this.errorHandler.handleError(error));
   }
 
   aoMudarPagina(event: any){
@@ -52,7 +54,8 @@ export class PesquisaPessoaComponent implements OnInit {
       .then(() => {
        this.grid.reset();
        this.messageService.add({severity:'success', summary:'Exclusão da Pessoa', detail:'Pessoa excluída com sucesso!'});
-      });
+      })
+      .catch((error) => this.errorHandler.handleError(error));
   }
 
 }
