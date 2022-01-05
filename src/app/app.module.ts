@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,6 +12,7 @@ import { LancamentosModule } from "./lancamentos/lancamentos.module";
 import { PessoasModule } from './pessoas/pessoas.module';
 import { CoreModule } from './core/core.module';
 import { LancamentoService } from './lancamentos/lancamento.service';
+
 
 
 @NgModule({
@@ -28,7 +29,12 @@ import { LancamentoService } from './lancamentos/lancamento.service';
     ToastModule,
     ConfirmDialogModule
   ],
-  providers: [LancamentoService, MessageService, ConfirmationService],
+  providers: [
+    LancamentoService, 
+    MessageService,
+    ConfirmationService,
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 
