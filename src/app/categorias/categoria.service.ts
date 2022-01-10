@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ErrorHandlerService } from '../core/error-handler.service';
 
@@ -14,7 +14,11 @@ export class CategoriaService {
     private errorHandler: ErrorHandlerService) { }
 
   listarTodas(): Promise<any>{
-    return this.http.get(this.categoriasUrl)
+
+    const headers = new HttpHeaders()
+        .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
+    return this.http.get(this.categoriasUrl, { headers })
       .toPromise()
       .then((resposta : any) => resposta.content);
   } 
