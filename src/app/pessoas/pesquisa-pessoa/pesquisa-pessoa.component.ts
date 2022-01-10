@@ -58,4 +58,13 @@ export class PesquisaPessoaComponent implements OnInit {
       .catch((error) => this.errorHandler.handleError(error));
   }
 
+  alterarStatus(pessoa: any){
+    this.pessoaService.alterarStatus(pessoa.codigo, !pessoa.ativo)
+      .then(() =>{
+        this.grid.reset();
+        this.messageService.add({severity:'success', summary:'Alteração de Status', detail:'Status alterado com sucesso!'});
+      }).catch((erro) => this.errorHandler.handleError(erro));
+  }
+    
+
 }

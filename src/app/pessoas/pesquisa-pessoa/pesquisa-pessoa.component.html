@@ -41,17 +41,17 @@
             </td>
             <td>
               <span class="p-column-title">Cidade</span>
-              {{ pessoa.cidade }}
+              {{ pessoa.endereco.cidade }}
             </td>
             <td class="col-data">
               <span class="p-column-title">Estado</span>
-              {{ pessoa.estado  }}
+              {{ pessoa.endereco.estado  }}
             </td>
             <td class="col-data">
                 <span class="p-column-title">Status</span>
-                <a href="javascript:;" [pTooltip]="pessoa.status ? 'Desativar' : 'Ativar'"
-                tooltipPosition="top">
-                {{ pessoa.status ? 'Ativo' : 'Inativo' }}
+                <a href="javascript:;" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'"
+                tooltipPosition="top" (click)="alterarStatus(pessoa)">
+                {{ pessoa.ativo ? 'Ativo' : 'Inativo' }}
             </a>
                  
             </td>
