@@ -46,14 +46,16 @@
 
         <div class="p-col-12 p-md-6 p-fluid">
           <label>Categoria</label>
-          <p-dropdown [options]="categorias"  optionLabel="label" placeholder="Selecione" name="categoria" ngModel #categoria="ngModel" [required]="true"
-          [(ngModel)] = "lancamento.categoria.codigo"></p-dropdown>
+          <p-dropdown [options]="categorias" placeholder="Selecione" 
+            [(ngModel)]="lancamento.categoria.codigo" name="categoria"
+            #categoria [required]="true"></p-dropdown>
         </div>
        
         <div class="p-col-12 p-md-6 p-fluid">
           <label>Pessoa</label>
-          <p-dropdown [options]="pessoas" [filter]="true" optionLabel="label" placeholder="Selecione" name="pessoa" ngModel #pessoa="ngModel" [required]="true"
-          [(ngModel)] = "lancamento.pessoa.codigo"></p-dropdown>
+          <p-dropdown [options]="pessoas" placeholder="Selecione" name="pessoa"
+          [(ngModel)]="lancamento.pessoa.codigo"
+          [filter]="true" #pessoa></p-dropdown>
         </div>
         
         <div class="p-col-12 p-fluid">
