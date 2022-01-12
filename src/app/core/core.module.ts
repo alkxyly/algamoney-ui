@@ -9,6 +9,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorHandlerService } from './error-handler.service';
 import { LancamentoService } from '../lancamentos/lancamento.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,19 +19,18 @@ registerLocaleData(localePt, 'pt-BR');
   declarations: [ NavbarComponent],
   imports: [
     CommonModule,
-
+    RouterModule,
     ToastModule,
     ConfirmDialogModule
   ],
   exports:[ 
-    NavbarComponent ,
+    NavbarComponent,
     ToastModule, 
     ConfirmDialogModule
   ],
   providers: [
     DatePipe,
     ConfirmationService,
-
     LancamentoService, 
     MessageService,
     ErrorHandlerService,
