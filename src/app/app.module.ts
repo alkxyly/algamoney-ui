@@ -16,6 +16,7 @@ import { PesquisaPessoaComponent } from './pessoas/pesquisa-pessoa/pesquisa-pess
 const routes: Routes = [
   { path: 'lancamentos', component: LancamentosPesquisaComponent},
   { path: 'lancamentos/novo', component: LancamentoCadastroComponent},
+  { path: 'lancamentos/:codigo', component: LancamentoCadastroComponent},
   { path: 'pessoas', component: PesquisaPessoaComponent}
 ]
 
