@@ -1,12 +1,26 @@
 export class Pessoa{
     codigo: number;
+    nome: string;
+    ativo: boolean = true;    
+    endereco: Endereco = new Endereco();
+}
+
+export class Endereco{
+    codigo: number;
+    logradouro: string;
+    numero: string;
+    complemento: string;
+    bairro: string;
+    cep: string;  
+    cidade: string;
+    estado: string;  
 }
 
 export class Categoria{
     codigo: number;
 }
 
-export class Lancamento{
+export class    Lancamento{
     codigo: number;
     tipo: string = 'RECEITA';
     descricao: string;
