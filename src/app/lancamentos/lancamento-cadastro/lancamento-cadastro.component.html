@@ -10,7 +10,7 @@
         </div>
 
         <div class="p-col-12">
-            <p-selectButton [options]="tipos" #tipo [(ngModel)]="lancamento.tipo" ></p-selectButton>
+            <p-selectButton [options]="tipos" #tipo [(ngModel)]="lancamento.tipo" name="tipo"></p-selectButton>
         </div>
   
         <div class="p-col-6 p-md-3 p-fluid">
@@ -22,7 +22,7 @@
 
         <div class="p-col-6 p-fluid">
           <label>{{tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento' }}</label>
-          <p-calendar dateFormat="dd/mm/yy" showIcon="true" ></p-calendar>
+          <p-calendar dateFormat="dd/mm/yy" showIcon="true" name="dataPagamento" #dataPagamento  ngModel [(ngModel)]="lancamento.dataPagamento" ></p-calendar>
         </div>
 
         <div class="p-col-12 p-md-9 p-fluid">
