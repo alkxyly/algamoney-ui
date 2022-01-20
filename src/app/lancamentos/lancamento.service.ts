@@ -70,9 +70,41 @@ export class LancamentoService {
   adicionar(lancamento: Lancamento): Promise<Lancamento>{
     const headers = new HttpHeaders()
       .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==')
-      .append('Content-Type', 'application/json');
-
+        
     return this.http.post<Lancamento>(this.lancamentosUrl, lancamento, { headers })
       .toPromise();
+  }
+
+  atualizar(lancamento: Lancamento): Promise<Lancamento>{
+    const headers = new HttpHeaders();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
+    return this.http.put<Lancamento>(`${this.lancamentosUrl}/${lancamento.codigo}`,lancamento, { headers })
+      .toPromise();
+  }
+
+  buscarPorCodigo(codigo: number): Promise<Lancamento>{
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');  
+
+    return this.http.get(`${this.lancamentosUrl}/${codigo}`, { headers })
+      .toPromise()
+      .then( (response: any) => {
+         this.converterStringsParaDatas([response]) ;
+         return response;
+      });
+  }
+
+  private converterStringsParaDatas(lancamentos: any[]){
+    for (const lancamento of lancamentos) {
+
+      let offset = new Date().getTimezoneOffset() * 60000;
+      
+      lancamento.dataVencimento = new Date(new Date(lancamento.dataVencimento).getTime() + offset);
+
+      if (lancamento.dataPagamento) {
+        lancamento.dataPagamento = new Date(new Date(lancamento.dataPagamento).getTime() + offset);
+      }
+    }
   }
 }
