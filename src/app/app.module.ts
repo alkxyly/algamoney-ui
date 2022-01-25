@@ -14,6 +14,7 @@ import { PesquisaPessoaComponent } from './pessoas/pesquisa-pessoa/pesquisa-pess
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'lancamentos', pathMatch: 'full' },
   { path: 'lancamentos', component: LancamentosPesquisaComponent},
   { path: 'lancamentos/novo', component: LancamentoCadastroComponent},
   { path: 'lancamentos/:codigo', component: LancamentoCadastroComponent},
