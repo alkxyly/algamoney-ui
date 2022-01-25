@@ -43,9 +43,6 @@ import { RouterModule } from '@angular/router';
     SelectButtonModule,
     DropdownModule    
   ],
-  exports:[
-    LancamentosPesquisaComponent,
-    LancamentoCadastroComponent
-  ]
+  exports:[]
 })
 export class LancamentosModule { }

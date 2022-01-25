@@ -35,9 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     InputMaskModule,    
     TableModule    
   ],
-  exports:[
-    PessoaCadastroComponent,
-    PesquisaPessoaComponent
-  ]
+  exports:[]
 })
 export class PessoasModule { }
