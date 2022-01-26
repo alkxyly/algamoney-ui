@@ -11,6 +11,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import { LancamentoService } from '../lancamentos/lancamento.service';
 import { RouterModule } from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { Title } from '@angular/platform-browser';
 
 
 
@@ -35,6 +36,7 @@ registerLocaleData(localePt, 'pt-BR');
     LancamentoService, 
     MessageService,
     ErrorHandlerService,
+    Title,
    
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],

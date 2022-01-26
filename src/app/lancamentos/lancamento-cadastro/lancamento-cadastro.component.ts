@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { CategoriaService } from 'src/app/categorias/categoria.service';
@@ -31,7 +32,8 @@ export class LancamentoCadastroComponent implements OnInit {
     private lancamentoService: LancamentoService,
     private messageService: MessageService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private title: Title) { }
 
   ngOnInit(): void {
     const codigoLancamento = this.route.snapshot.params['codigo'];
@@ -40,6 +42,8 @@ export class LancamentoCadastroComponent implements OnInit {
     
     this.carregarCategorias();
     this.carregarPessoas();
+
+    this.title.setTitle('Novo lançamento');
   }
 
   carregarCategorias(){
@@ -65,6 +69,7 @@ export class LancamentoCadastroComponent implements OnInit {
     this.lancamentoService.atualizar(this.lancamento).then(lancamento => {
       this.lancamento = lancamento;
       this.messageService.add({ severity: 'success', detail: 'Lançamento atualizado com sucesso!' });
+      this.atualizarTituloEdicao();
     })
     .catch(erro => this.errorHandler.handle(erro));
   }
@@ -83,8 +88,11 @@ export class LancamentoCadastroComponent implements OnInit {
   buscarPorCodigo(codigoLancamento: number){
     if(codigoLancamento){
       this.lancamentoService.buscarPorCodigo(codigoLancamento)
-        .then(lancamento => this.lancamento = lancamento)
-        .catch(erro => this.errorHandler.handle(erro));      
+        .then(lancamento => {
+          this.lancamento = lancamento
+          this.atualizarTituloEdicao();
+      }) 
+      .catch(erro => this.errorHandler.handle(erro));      
     }
   }
 
@@ -100,5 +108,9 @@ export class LancamentoCadastroComponent implements OnInit {
     }.bind(this), 1);  // para limpar o formulario
 
     this.router.navigate(['/lancamentos/novo']);
+  }
+
+  atualizarTituloEdicao(){
+    this.title.setTitle(`Edição de lançamento: ${this.lancamento.descricao}`);
   }
 }
