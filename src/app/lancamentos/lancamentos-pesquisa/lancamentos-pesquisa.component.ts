@@ -60,4 +60,5 @@ export class LancamentosPesquisaComponent implements OnInit{
     .catch(erro => this.errorHandler.handle(erro));    
   }
   
+  
 }
