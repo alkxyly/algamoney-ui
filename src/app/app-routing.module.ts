@@ -6,7 +6,6 @@ import { PesquisaPessoaComponent } from './pessoas/pesquisa-pessoa/pesquisa-pess
 
 const routes: Routes = [
   { path: '', redirectTo: 'lancamentos', pathMatch: 'full' },
-  { path: 'pessoas', component: PesquisaPessoaComponent},
   { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},
   { path: '**', redirectTo: 'pagina-nao-encontrada'}
 ]
