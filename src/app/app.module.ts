@@ -16,11 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
 
-    AppRoutingModule,
-    
+      
     CoreModule,
     LancamentosModule,
-    PessoasModule 
+    PessoasModule,
+    AppRoutingModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
