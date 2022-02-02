@@ -1,6 +1,9 @@
 import { Component, ErrorHandler, OnInit, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
+import { Pessoa } from 'src/app/core/model';
 import { PessoaFiltro, PessoaService } from '../pessoa.service';
 
 @Component({
@@ -13,16 +16,19 @@ export class PesquisaPessoaComponent implements OnInit {
   totalRegistros: number = 0;
   pessoas = [];
   filtro = new PessoaFiltro();
+  pessoa: Pessoa =  new Pessoa();
+
   @ViewChild('tabela') grid!: Table;
 
   constructor(
     private pessoaService: PessoaService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private errorHandler: ErrorHandler){}
+    private errorHandler: ErrorHandler,
+    private title: Title){}
 
   ngOnInit(): void {
-    //this.pesquisar();
+    this.title.setTitle('Pesquisa de Pessoas');
   }
 
   pesquisar(pagina: number = 0){
@@ -65,6 +71,7 @@ export class PesquisaPessoaComponent implements OnInit {
         this.messageService.add({severity:'success', summary:'Alteração de Status', detail:'Status alterado com sucesso!'});
       }).catch((erro) => this.errorHandler.handleError(erro));
   }
-    
+   
+
 
 }

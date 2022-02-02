@@ -74,4 +74,10 @@ export class PessoaService {
     return this.http.post<Pessoa>(this.url, pessoa, { headers })
       .toPromise();
   }
+
+  buscarPorCodigo(codigo: number): Promise<Pessoa>{
+    return this.http.get<Pessoa>(`${this.url}/${
+      codigo}`, { headers: this.headers })
+      .toPromise();
+  }
 }
