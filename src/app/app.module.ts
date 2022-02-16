@@ -8,6 +8,7 @@ import { PessoasModule } from './pessoas/pessoas.module';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SegurancaModule } from './seguranca/seguranca.module';
+import { AuthService } from './seguranca/auth.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SegurancaModule } from './seguranca/seguranca.module';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AuthService]
 })
 
 

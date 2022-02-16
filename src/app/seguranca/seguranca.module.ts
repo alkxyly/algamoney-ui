@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SegurancaRoutingModule } from './seguranca-routing.module';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { AuthService } from './auth.service';
 
 export function tokenGetter(): string {  return localStorage.getItem('token');}
 
