@@ -54,7 +54,6 @@ export class LancamentosPesquisaComponent implements OnInit{
 
   excluir(lancamento: any){
     this.lancamentoService.excluir(lancamento.codigo).then(() => {
-      this.grid.reset();
       this.messageService.add({severity:'success', summary:'Exclusão do Lançamento', detail:'Lançamento excluído com sucesso!'});
     })
     .catch(erro => this.errorHandler.handle(erro));    

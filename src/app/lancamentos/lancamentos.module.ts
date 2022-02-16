@@ -19,6 +19,7 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 import { LancamentosRountingModule } from './lancamentos-routing.module';
+import { LancamentoService } from './lancamento.service';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { LancamentosRountingModule } from './lancamentos-routing.module';
     SharedModule,    
     LancamentosRountingModule
   ],
-  exports:[]
+  exports:[],
+  providers: [LancamentoService],
 })
 export class LancamentosModule { }
