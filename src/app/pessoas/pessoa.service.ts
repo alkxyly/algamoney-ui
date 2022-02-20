@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Pessoa } from '../core/model';
 
 export class PessoaFiltro{
@@ -13,20 +14,19 @@ export class PessoaFiltro{
 })
 export class PessoaService {
 
-  url = 'http://localhost:8080/pessoas';
+  url: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.url = environment.apiUrl + '/pessoas';
+  }
 
   listarTodas(): Promise<any>{
-
     return this.http.get(this.url)
       .toPromise()
       .then((response: any) => response.content);
   }
 
   pesquisar(filtro: PessoaFiltro): Promise<any>{
-
-
     let params = new HttpParams();
     params = params.set('page', filtro.pagina.toString());
     params = params.set('size', filtro.itensPorPagina.toString());
@@ -58,15 +58,12 @@ export class PessoaService {
   } 
 
   alterarStatus(codigo: number, ativo:boolean): Promise<void>{
-
-
     return this.http.put(`${this.url}/${codigo}/ativo`, ativo)
       .toPromise()
       .then(() => null);
   }
 
   adicionar(pessoa: Pessoa): Promise<Pessoa>{
-
     return this.http.post<Pessoa>(this.url, pessoa)
       .toPromise();
   }
