@@ -11,6 +11,7 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { AuthService } from './auth.service';
 import { MoneyHttpInterceptor } from './money-http-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from './auth.guard';
 
 export function tokenGetter(): string {  return localStorage.getItem('token');}
 
@@ -41,7 +42,8 @@ export function tokenGetter(): string {  return localStorage.getItem('token');}
       provide: HTTP_INTERCEPTORS,
       useClass: MoneyHttpInterceptor,
       multi: true
-    }
+    },
+    AuthGuard
   ]
 })
 export class SegurancaModule { 
