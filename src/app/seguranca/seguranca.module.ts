@@ -12,6 +12,7 @@ import { AuthService } from './auth.service';
 import { MoneyHttpInterceptor } from './money-http-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
+import { LogoutService } from './logout.service';
 
 export function tokenGetter(): string {  return localStorage.getItem('token');}
 
@@ -43,7 +44,8 @@ export function tokenGetter(): string {  return localStorage.getItem('token');}
       useClass: MoneyHttpInterceptor,
       multi: true
     },
-    AuthGuard
+    AuthGuard,
+    LogoutService
   ]
 })
 export class SegurancaModule { 
